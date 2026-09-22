@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academia de Matemáticas Arana - Domina los Números</title>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- KaTeX para renderizado de expresiones matemáticas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+
+  <!-- Archivo CSS local -->
+  <link rel="stylesheet" href="academiaestilo.css">
+</head>
+<body>
+
+  <!-- Navegación Principal -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-square-root-variable logo-icon"></i>
+        <span>Academia Arana</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#materias">Materias</a></li>
+          <li><a href="#interactivo">Practicar</a></li>
+          <li><a href="#herramientas">Calculadoras</a></li>
+          <li><a href="#profesor">Profesor</a></li>
+          <li><a href="#precios">Planes</a></li>
+        </ul>
+      </nav>
+      <a href="#inscripcion" class="btn btn-primary nav-btn">Inscribirme</a>
+    </div>
+  </header>
+
+  <!-- Sección Hero -->
+  <section class="hero" id="inicio">
+    <canvas class="hero-canvas" id="mathCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-tag"><i class="fa-solid fa-sparkles"></i> Aprende a tu propio ritmo</div>
+      <h1>Academia de Matemáticas Arana</h1>
+      <p>Domina todas las asignaturas desde nivel básico hasta avanzado con explicaciones intuitivas, prácticas y visuales.</p>
+      <div class="hero-btns">
+        <a href="#materias" class="btn btn-primary"><i class="fa-solid fa-book-open"></i> Explorar Materias</a>
+        <a href="#interactivo" class="btn btn-outline"><i class="fa-solid fa-gamepad"></i> Probar Gimnasio Interactivo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Banner -->
+  <section class="stats-bar">
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="stat-num">+8</span>
+        <span class="stat-desc">Materias Completas</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">+150</span>
+        <span class="stat-desc">Horas en Video HD</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">+1,200</span>
+        <span class="stat-desc">Ejercicios Resueltos</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">98%</span>
+        <span class="stat-desc">Aprobación en Exámenes</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Materias / Cursos -->
+  <section class="subjects-section" id="materias">
+    <div class="section-title">
+      <h2>Nuestras Materias</h2>
+      <p>Un currículo integral estructurado progresivamente para asegurar tu dominio conceptual.</p>
+    </div>
+
+    <!-- Filtros por nivel -->
+    <div class="filter-container">
+      <button class="filter-btn active" data-filter="all">Todas</button>
+      <button class="filter-btn" data-filter="basico">Básico</button>
+      <button class="filter-btn" data-filter="intermedio">Intermedio</button>
+      <button class="filter-btn" data-filter="avanzado">Avanzado</button>
+    </div>
+
+    <div class="subjects-grid">
+      
+      <!-- Aritmética -->
+      <div class="subject-card" data-category="basico">
+        <div class="card-header">
+          <span class="badge badge-basico">Básico</span>
+          <i class="fa-solid fa-calculator card-icon"></i>
+          <h3>Aritmética</h3>
+        </div>
+        <p class="card-desc">Fundamentos de los números, fracciones, razones, proporciones, porcentajes y regla de tres.</p>
+        <ul class="syllabus-list">
+          <li><i class="fa-solid fa-check"></i> Números Enteros y Racionales</li>
+          <li><i class="fa-solid fa-check"></i> Divisibilidad, MCM y MCD</li>
+          <li><i class="fa-solid fa-check"></i> Porcentajes e Interés Simple</li>
+        </ul>
+        <div class="card-footer">
+          <span class="modules-count"><i class="fa-regular fa-clock"></i> 24 Horas</span>
+          <a href="#inscripcion" class="card-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Álgebra -->
+      <div class="subject-card" data-category="basico">
+        <div class="card-header">
+          <span class="badge badge-basico">Básico</span>
+          <i class="fa-solid fa-subscript card-icon"></i>
+          <h3>Álgebra Tradicional</h3>
+        </div>
+        <p class="card-desc">Operaciones polinómicas, factorización, ecuaciones de primer y segundo grado e inecuaciones.</p>
+        <ul class="syllabus-list">
+          <li><i class="fa-solid fa-check"></i> Productos Notables y Factorización</li>
+          <li><i class="fa-solid fa-check"></i> Ecuaciones y Sistemas 2x2 / 3x3</li>
+          <li><i class="fa-solid fa-check"></i> Inecuaciones y Valor Absoluto</li>
+        </ul>
+        <div class="card-footer">
+          <span class="modules-count"><i class="fa-regular fa-clock"></i> 36 Horas</span>
+          <a href="#inscripcion" class="card-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Geometría -->
+      <div class="subject-card" data-category="intermedio">
+        <div class="card-header">
+          <span class="badge badge-intermedio">Intermedio</span>
+          <i class="fa-solid fa-shapes card-icon"></i>
+          <h3>Geometría Plana y del Espacio</h3>
+        </div>
+        <p class="card-desc">Estudio de figuras geométricas, propiedades de triángulos, círculos, áreas y volúmenes 3D.</p>
+        <ul class="syllabus-list">
+          <li><i class="fa-solid fa-check"></i> Triángulos, Semejanza y Congruencia</li>
+          <li><i class="fa-solid fa-check"></i> Circunferencia y Áreas Sombreadas</li>
+          <li><i class="fa-solid fa-check"></i> Geometría del Espacio y Poliedros</li>
+        </ul>
+        <div class="card-footer">
+          <span class="modules-count"><i class="fa-regular fa-clock"></i> 30 Horas</span>
+          <a href="#inscripcion" class="card-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Trigonometría -->
+      <div class="subject-card" data-category="intermedio">
+        <div class="card-header">
+          <span class="badge badge-intermedio">Intermedio</span>
+          <i class="fa-solid fa-wave-square card-icon"></i>
+          <h3>Trigonometría</h3>
+        </div>
+        <p class="card-desc">Razones trigonométricas, identidades, ecuaciones trigonométricas y funciones circulares.</p>
+        <ul class="syllabus-list">
+          <li><i class="fa-solid fa-check"></i> Triángulos Rectángulos y Oblicuángulos</li>
+          <li><i class="fa-solid fa-check"></i> Identidades y Reducción al I Cuadrante</li>
+          <li><i class="fa-solid fa-check"></i> Funciones Trigonométricas y Gráficas</li>
+        </ul>
+        <div class="card-footer">
+          <span class="modules-count"><i class="fa-regular fa-clock"></i> 28 Horas</span>
+          <a href="#inscripcion" class="card-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Geometría Analítica -->
+      <div class="subject-card" data-category="intermedio">
+        <div class="card-header">
+          <span class="badge badge-intermedio">Intermedio</span>
+          <i class="fa-solid fa-chart-line card-icon"></i>
+          <h3>Geometría Analítica</h3>
+        </div>
+        <p class="card-desc">Unión del álgebra y la geometría mediante el plano cartesiano: rectas, cónicas y lugares geométricos.</p>
+        <ul class="syllabus-list">
+          <li><i class="fa-solid fa-check"></i> La Recta y Distancia entre Puntos</li>
+          <li><i class="fa-solid fa-check"></i> La Circunferencia y Parábola</li>
+          <li><i class="fa-solid fa-check"></i> Elipse e Hipérbola</li>
+        </ul>
+        <div class="card-footer">
+          <span class="modules-count"><i class="fa-regular fa-clock"></i> 25 Horas</span>
+          <a href="#inscripcion" class="card-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Cálculo Diferencial e Integral -->
+      <div class="subject-card" data-category="avanzado">
+        <div class="card-header">
+          <span class="badge badge-avanzado">Avanzado</span>
+          <i class="fa-solid fa-infinity card-icon"></i>
+          <h3>Cálculo Diferencial e Integral</h3>
+        </div>
+        <p class="card-desc">Límites, derivadas, técnicas de integración y sus aplicaciones en física e ingeniería.</p>
+        <ul class="syllabus-list">
+          <li><i class="fa-solid fa-check"></i> Límites y Continuidad</li>
+          <li><i class="fa-solid fa-check"></i> La Derivada y Optimización</li>
+          <li><i class="fa-solid fa-check"></i> Integrales Definidas e Indefinidas</li>
+        </ul>
+        <div class="card-footer">
+          <span class="modules-count"><i class="fa-regular fa-clock"></i> 45 Horas</span>
+          <a href="#inscripcion" class="card-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Álgebra Lineal -->
+      <div class="subject-card" data-category="avanzado">
+        <div class="card-header">
+          <span class="badge badge-avanzado">Avanzado</span>
+          <i class="fa-solid fa-table-cells card-icon"></i>
+          <h3>Álgebra Lineal</h3>
+        </div>
+        <p class="card-desc">Vectores, matrices, determinantes, espacios vectoriales y transformaciones lineales.</p>
+        <ul class="syllabus-list">
+          <li><i class="fa-solid fa-check"></i> Operaciones Matriciales y Sistemas</li>
+          <li><i class="fa-solid fa-check"></i> Determinantes y Matriz Inversa</li>
+          <li><i class="fa-solid fa-check"></i> Espacios Vectoriales e Autovalores</li>
+        </ul>
+        <div class="card-footer">
+          <span class="modules-count"><i class="fa-regular fa-clock"></i> 32 Horas</span>
+          <a href="#inscripcion" class="card-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Estadística y Probabilidades -->
+      <div class="subject-card" data-category="avanzado">
+        <div class="card-header">
+          <span class="badge badge-avanzado">Avanzado</span>
+          <i class="fa-solid fa-chart-pie card-icon"></i>
+          <h3>Estadística y Probabilidad</h3>
+        </div>
+        <p class="card-desc">Análisis de datos, medidas de tendencia central, distribución normal y teoría de probabilidades.</p>
+        <ul class="syllabus-list">
+          <li><i class="fa-solid fa-check"></i> Análisis Descriptivo y Gráficos</li>
+          <li><i class="fa-solid fa-check"></i> Regla de Bayes y Combinatoria</li>
+          <li><i class="fa-solid fa-check"></i> Distribuciones Binomial y Normal</li>
+        </ul>
+        <div class="card-footer">
+          <span class="modules-count"><i class="fa-regular fa-clock"></i> 30 Horas</span>
+          <a href="#inscripcion" class="card-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Gimnasio de Práctica Interactivo -->
+  <section class="interactive-section" id="interactivo">
+    <div class="section-title">
+      <h2>Gimnasio de Práctica Interactivo</h2>
+      <p>Pon a prueba tus conocimientos al instante con feedback guiado paso a paso.</p>
+    </div>
+
+    <div class="quiz-container">
+      <div class="quiz-header">
+        <div>
+          <span id="quizCategory" class="badge badge-basico">Álgebra</span>
+          <span style="font-size: 0.9rem; margin-left: 10px; color: var(--gray-color);">Pregunta <span id="currentQ">1</span> de 3</span>
+        </div>
+        <div style="font-weight: bold; color: var(--primary-color);">Puntuación: <span id="score">0</span></div>
+      </div>
+
+      <div class="quiz-question">
+        <p id="questionText">¿Cuál es el valor de $x$ que satisface la siguiente ecuación cuadrática?</p>
+        <div id="mathFormula" class="math-box"></div>
+      </div>
+
+      <div class="quiz-options" id="optionsContainer">
+        <!-- Opciones inyectadas vía JS -->
+      </div>
+
+      <div class="explanation-box" id="explanationBox">
+        <i class="fa-solid fa-lightbulb"></i> <strong id="explTitle">Explicación:</strong>
+        <p id="explBody" style="margin-top: 5px;"></p>
+      </div>
+
+      <div class="quiz-controls">
+        <button id="nextBtn" class="btn btn-primary" style="display:none;" onclick="nextQuestion()">Siguiente Pregunta <i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Herramientas Interactivas y Calculadoras -->
+  <section class="tools-section" id="herramientas">
+    <div class="section-title">
+      <h2>Laboratorio Matemático</h2>
+      <p>Calculadoras interactivas para verificar tus resultados de forma gráfica y numérica.</p>
+    </div>
+
+    <div class="tools-grid">
+      <!-- Calculadora Cuadrática -->
+      <div class="tool-card">
+        <h3><i class="fa-solid fa-calculator" style="color: var(--primary-color);"></i> Resolutor de Ecuación Cuadrática</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--gray-color);">Para la forma: $ax^2 + bx + c = 0$</p>
+        <div class="tool-inputs">
+          <input type="number" id="quadA" placeholder="a" value="1">
+          <span>x² +</span>
+          <input type="number" id="quadB" placeholder="b" value="-5">
+          <span>x +</span>
+          <input type="number" id="quadC" placeholder="c" value="6">
+          <span>= 0</span>
+        </div>
+        <button class="btn btn-primary" style="width: 100%;" onclick="solveQuadratic()">Calcular Raíces</button>
+        <div class="tool-result" id="quadResult">
+          Haz clic en calcular para ver los valores de $x_1$ y $x_2$.
+        </div>
+      </div>
+
+      <!-- Determinante de Matriz 2x2 -->
+      <div class="tool-card">
+        <h3><i class="fa-solid fa-table-cells" style="color: var(--secondary-color);"></i> Determinante de Matriz 2x2</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--gray-color);">Calcula el determinante $|A|$ de la matriz dada.</p>
+        <div class="matrix-grid">
+          <input type="number" id="m11" value="3">
+          <input type="number" id="m12" value="2">
+          <input type="number" id="m21" value="1">
+          <input type="number" id="m22" value="4">
+        </div>
+        <button class="btn btn-primary" style="width: 100%;" onclick="solveDeterminant()">Calcular Determinante</button>
+        <div class="tool-result" id="detResult">
+          Haz clic para calcular $|A| = ad - bc$.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Profesor Unico -->
+  <section class="teachers-section" id="profesor">
+    <div class="section-title">
+      <h2>Director Académico</h2>
+      <p>Aprende directamente con el fundador y docente principal de la Academia Arana.</p>
+    </div>
+
+    <div class="single-teacher-container">
+      <div class="teacher-card single-card">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" alt="Prof. Arana" class="teacher-img">
+        <h3>Prof. Carlos Arana</h3>
+        <p class="role">Fundador y Docente Principal</p>
+        <p class="bio">Licenciado en Matemáticas con más de 15 años de experiencia preparando a alumnos para exámenes de admisión universitarios y niveles avanzados de ingeniería. Su método combina la rigurosidad conceptual con la simplicidad práctica.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planes de Precios en Soles -->
+  <section class="pricing-section" id="precios">
+    <div class="section-title">
+      <h2>Planes de Estudio</h2>
+      <p>Elige la modalidad que mejor se adapte a tus metas académicas.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Plan Estándar -->
+      <div class="price-card">
+        <h3>Pase Estudiantil</h3>
+        <div class="price">S/ 69 <span>/ mes</span></div>
+        <p style="color: var(--gray-color); margin-bottom: 20px;">Ideal para nivelación escolar y primeros ciclos.</p>
+        <ul class="price-features">
+          <li><i class="fa-solid fa-check"></i> Acceso a materias Básicas</li>
+          <li><i class="fa-solid fa-check"></i> Ejercicios e interactivos ilimitados</li>
+          <li><i class="fa-solid fa-check"></i> Comunidad de dudas en Discord</li>
+          <li style="opacity: 0.5; text-decoration: line-through;"><i class="fa-solid fa-xmark"></i> Asesoría personalizada 1-a-1</li>
+        </ul>
+        <a href="#inscripcion" class="btn btn-outline" style="width:100%; text-align:center;">Elegir Plan</a>
+      </div>
+
+      <!-- Plan Pro -->
+      <div class="price-card featured">
+        <div class="popular-badge">Más Popular</div>
+        <h3>Membresía Avanzada</h3>
+        <div class="price">S/ 139 <span>/ mes</span></div>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">Para estudiantes universitarios e ingeniería.</p>
+        <ul class="price-features">
+          <li><i class="fa-solid fa-check"></i> Acceso Total (Todas las Materias)</li>
+          <li><i class="fa-solid fa-check"></i> Resolutor de dudas en 24h</li>
+          <li><i class="fa-solid fa-check"></i> Exámenes de simulación tipo admisión</li>
+          <li><i class="fa-solid fa-check"></i> Certificados digitales por materia</li>
+        </ul>
+        <a href="#inscripcion" class="btn btn-primary" style="width:100%; text-align:center; background: white; color: var(--primary-color);">Inscribirme Ahora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Inscripción / Contacto -->
+  <section class="enroll-section" id="inscripcion">
+    <div class="section-title">
+      <h2>Comienza Tu Aprendizaje Hoy</h2>
+      <p>Regístrate y recibe una clase de prueba gratuita de la materia que elijas.</p>
+    </div>
+
+    <div class="enroll-form">
+      <form id="registrationForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label for="name">Nombre Completo</label>
+          <input type="text" id="name" class="form-input" placeholder="Ej. Juan Pérez" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" class="form-input" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="subjectSelect">Materia de Interés Principal</label>
+          <select id="subjectSelect" class="form-select">
+            <option>Aritmética y Razonamiento</option>
+            <option>Álgebra</option>
+            <option>Geometría y Trigonometría</option>
+            <option>Cálculo Diferencial e Integral</option>
+            <option>Álgebra Lineal</option>
+            <option>Estadística y Probabilidad</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Solicitar Clase de Prueba Gratis</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="color: white; font-size: 1.3rem;">
+          <i class="fa-solid fa-square-root-variable logo-icon"></i>
+          Academia Arana
+        </a>
+        <p style="color: var(--gray-color); margin-top: 10px; font-size: 0.9rem;">
+          Haciendo que el lenguaje del universo sea accesible para todos nuestros estudiantes.
+        </p>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 10px;">Materias</h4>
+        <ul style="list-style: none; color: var(--gray-color); font-size: 0.9rem; line-height: 1.8;">
+          <li>Álgebra Tradicional</li>
+          <li>Cálculo Integral</li>
+          <li>Geometría Analítica</li>
+          <li>Álgebra Lineal</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="margin-bottom: 10px;">Enlaces</h4>
+        <ul style="list-style: none; color: var(--gray-color); font-size: 0.9rem; line-height: 1.8;">
+          <li><a href="#materias" style="color: inherit; text-decoration: none;">Cursos</a></li>
+          <li><a href="#interactivo" style="color: inherit; text-decoration: none;">Práctica</a></li>
+          <li><a href="#herramientas" style="color: inherit; text-decoration: none;">Laboratorio</a></li>
+          <li><a href="#precios" style="color: inherit; text-decoration: none;">Planes</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 40px; color: var(--gray-color); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+      &copy; 2026 Academia de Matemáticas Arana. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Scripts JavaScript -->
+  <script>
+    /* 1. CANVAS CON SÍMBOLOS MATEMÁTICOS FLOTANTES */
+    const canvas = document.getElementById('mathCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = canvas.parentElement.clientHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const symbols = ['∑', '∫', '√', 'π', '∞', 'f(x)', 'Δ', 'θ', 'λ', 'x²', '∂', '∈', '±'];
+    const particles = [];
+
+    for (let i = 0; i < 35; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        text: symbols[Math.floor(Math.random() * symbols.length)],
+        size: Math.random() * 20 + 14,
+        speedX: (Math.random() - 0.5) * 0.5,
+        speedY: (Math.random() - 0.5) * 0.5,
+        opacity: Math.random() * 0.4 + 0.1
+      });
+    }
+
+    function animateCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      particles.forEach(p => {
+        p.x += p.speedX;
+        p.y += p.speedY;
+
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+
+        ctx.fillStyle = `rgba(99, 102, 241, ${p.opacity})`;
+        ctx.font = `${p.size}px 'Fira Code', monospace`;
+        ctx.fillText(p.text, p.x, p.y);
+      });
+
+      requestAnimationFrame(animateCanvas);
+    }
+    animateCanvas();
+
+    /* 2. FILTRADO DE MATERIAS */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const subjectCards = document.querySelectorAll('.subject-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        subjectCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    /* 3. GIMNASIO DE PRÁCTICA INTERACTIVO */
+    const quizData = [
+      {
+        category: "Álgebra",
+        badgeClass: "badge-basico",
+        question: "Resuelve para $x$: $x^2 - 5x + 6 = 0$",
+        latexFormula: "x^2 - 5x + 6 = 0",
+        options: [
+          { text: "x = 2 o x = 3", correct: true },
+          { text: "x = -2 o x = -3", correct: false },
+          { text: "x = 1 o x = 6", correct: false },
+          { text: "x = 0 o x = 5", correct: false }
+        ],
+        explanation: "Factorizando el trinomio buscamos dos números que multiplicados den +6 y sumados -5. Esos números son -2 y -3, por lo que $(x-2)(x-3) = 0$, resultando $x=2$ o $x=3$."
+      },
+      {
+        category: "Cálculo",
+        badgeClass: "badge-avanzado",
+        question: "¿Cuál es la derivada de $f(x) = x^3 + 4x$ con respecto a $x$?",
+        latexFormula: "\\frac{d}{dx}(x^3 + 4x)",
+        options: [
+          { text: "3x² + 4", correct: true },
+          { text: "x² + 4", correct: false },
+          { text: "3x + 4", correct: false },
+          { text: "3x³ + 4", correct: false }
+        ],
+        explanation: "Aplicando la regla de la potencia: $\\frac{d}{dx}(x^n) = n x^{n-1}$. Así, la derivada de $x^3$ es $3x^2$ y la derivada de $4x$ es $4$."
+      },
+      {
+        category: "Geometría",
+        badgeClass: "badge-intermedio",
+        question: "¿Cuál es el área de un triángulo con base $b = 8\\text{ cm}$ y altura $h = 5\\text{ cm}$?",
+        latexFormula: "A = \\frac{b \\cdot h}{2}",
+        options: [
+          { text: "20 cm²", correct: true },
+          { text: "40 cm²", correct: false },
+          { text: "13 cm²", correct: false },
+          { text: "25 cm²", correct: false }
+        ],
+        explanation: "Sustituyendo en la fórmula: $A = \\frac{8 \\times 5}{2} = \\frac{40}{2} = 20\\text{ cm}^2$."
+      }
+    ];
+
+    let currentQIdx = 0;
+    let score = 0;
+
+    function renderQuiz() {
+      const q = quizData[currentQIdx];
+      
+      const badge = document.getElementById('quizCategory');
+      badge.textContent = q.category;
+      badge.className = `badge ${q.badgeClass}`;
+
+      document.getElementById('currentQ').textContent = currentQIdx + 1;
+      document.getElementById('questionText').innerHTML = q.question;
+      
+      const mathBox = document.getElementById('mathFormula');
+      try {
+        katex.render(q.latexFormula, mathBox, { displayMode: true, throwOnError: false });
+      } catch(e) {
+        mathBox.textContent = q.latexFormula;
+      }
+
+      const optionsContainer = document.getElementById('optionsContainer');
+      optionsContainer.innerHTML = '';
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.textContent = opt.text;
+        btn.onclick = () => selectOption(btn, opt.correct, q.explanation);
+        optionsContainer.appendChild(btn);
+      });
+
+      document.getElementById('explanationBox').style.display = 'none';
+      document.getElementById('nextBtn').style.display = 'none';
+    }
+
+    function selectOption(selectedBtn, isCorrect, explanation) {
+      const allBtns = document.querySelectorAll('.option-btn');
+      allBtns.forEach(b => b.disabled = true);
+
+      if (isCorrect) {
+        selectedBtn.classList.add('correct');
+        score += 10;
+        document.getElementById('score').textContent = score;
+        document.getElementById('explTitle').textContent = "¡Correcto!";
+        document.getElementById('explTitle').style.color = "var(--success-color)";
+      } else {
+        selectedBtn.classList.add('incorrect');
+        document.getElementById('explTitle').textContent = "Incorrecto";
+        document.getElementById('explTitle').style.color = "var(--danger-color)";
+      }
+
+      const explBox = document.getElementById('explanationBox');
+      document.getElementById('explBody').innerHTML = explanation;
+      explBox.style.display = 'block';
+
+      if (window.katex) {
+        try {
+          katex.renderMathInElement && katex.renderMathInElement(explBox);
+        } catch(e) {}
+      }
+
+      document.getElementById('nextBtn').style.display = 'inline-block';
+    }
+
+    function nextQuestion() {
+      currentQIdx++;
+      if (currentQIdx < quizData.length) {
+        renderQuiz();
+      } else {
+        alert(`¡Felicidades! Has completado la práctica con una puntuación de ${score} puntos.`);
+        currentQIdx = 0;
+        score = 0;
+        document.getElementById('score').textContent = score;
+        renderQuiz();
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderQuiz();
+    });
+
+    /* 4. CALCULADORAS INTERACTIVAS */
+    function solveQuadratic() {
+      const a = parseFloat(document.getElementById('quadA').value);
+      const b = parseFloat(document.getElementById('quadB').value);
+      const c = parseFloat(document.getElementById('quadC').value);
+      const resDiv = document.getElementById('quadResult');
+
+      if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        resDiv.innerHTML = "Por favor, introduce valores numéricos válidos.";
+        return;
+      }
+
+      if (a === 0) {
+        resDiv.innerHTML = "Si $a = 0$, la ecuación es lineal: $x = " + (-c / b).toFixed(2) + "$";
+        return;
+      }
+
+      const disc = b * b - 4 * a * c;
+
+      if (disc > 0) {
+        const x1 = (-b + Math.sqrt(disc)) / (2 * a);
+        const x2 = (-b - Math.sqrt(disc)) / (2 * a);
+        resDiv.innerHTML = `<strong>Discriminante ($\Delta = ${disc}$):</strong> 2 raíces reales distintas.<br><strong>x₁ = ${x1.toFixed(2)}</strong>, <strong>x₂ = ${x2.toFixed(2)}</strong>`;
+      } else if (disc === 0) {
+        const x = -b / (2 * a);
+        resDiv.innerHTML = `<strong>Discriminante ($\Delta = 0$):</strong> Raíz doble.<br><strong>x₁ = x₂ = ${x.toFixed(2)}</strong>`;
+      } else {
+        const real = (-b / (2 * a)).toFixed(2);
+        const imag = (Math.sqrt(-disc) / (2 * a)).toFixed(2);
+        resDiv.innerHTML = `<strong>Discriminante ($\Delta = ${disc}$):</strong> Raíses complejas conjugadas.<br><strong>x = ${real} ± ${imag}i</strong>`;
+      }
+    }
+
+    function solveDeterminant() {
+      const m11 = parseFloat(document.getElementById('m11').value) || 0;
+      const m12 = parseFloat(document.getElementById('m12').value) || 0;
+      const m21 = parseFloat(document.getElementById('m21').value) || 0;
+      const m22 = parseFloat(document.getElementById('m22').value) || 0;
+
+      const det = (m11 * m22) - (m12 * m21);
+      const resDiv = document.getElementById('detResult');
+
+      resDiv.innerHTML = `<strong>Procedimiento:</strong> (${m11} × ${m22}) - (${m12} × ${m21})<br><strong>|A| = ${det}</strong>`;
+    }
+
+    /* 5. FORMULARIO DE REGISTRO */
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const subject = document.getElementById('subjectSelect').value;
+      alert(`¡Gracias, ${name}! Tu solicitud para la clase de prueba en Academia Arana (${subject}) ha sido enviada con éxito.`);
+      document.getElementById('registrationForm').reset();
+    }
+  </script>
+</body>
+</html>
