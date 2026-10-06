@@ -494,8 +494,8 @@
         if (p.y < 0) p.y = canvas.height;
         if (p.y > canvas.height) p.y = 0;
 
-        ctx.fillStyle = `rgba(99, 102, 241, ${p.opacity})`;
-        ctx.font = `${p.size}px 'Fira Code', monospace`;
+        ctx.fillStyle = rgba(99, 102, 241, ${p.opacity});
+        ctx.font = ${p.size}px 'Fira Code', monospace;
         ctx.fillText(p.text, p.x, p.y);
       });
 
@@ -575,7 +575,7 @@
       
       const badge = document.getElementById('quizCategory');
       badge.textContent = q.category;
-      badge.className = `badge ${q.badgeClass}`;
+      badge.className = badge ${q.badgeClass};
 
       document.getElementById('currentQ').textContent = currentQIdx + 1;
       document.getElementById('questionText').innerHTML = q.question;
@@ -636,7 +636,7 @@
       if (currentQIdx < quizData.length) {
         renderQuiz();
       } else {
-        alert(`¡Felicidades! Has completado la práctica con una puntuación de ${score} puntos.`);
+        alert(¡Felicidades! Has completado la práctica con una puntuación de ${score} puntos.);
         currentQIdx = 0;
         score = 0;
         document.getElementById('score').textContent = score;
@@ -670,14 +670,14 @@
       if (disc > 0) {
         const x1 = (-b + Math.sqrt(disc)) / (2 * a);
         const x2 = (-b - Math.sqrt(disc)) / (2 * a);
-        resDiv.innerHTML = `<strong>Discriminante ($\Delta = ${disc}$):</strong> 2 raíces reales distintas.<br><strong>x₁ = ${x1.toFixed(2)}</strong>, <strong>x₂ = ${x2.toFixed(2)}</strong>`;
+        resDiv.innerHTML = <strong>Discriminante ($\Delta = ${disc}$):</strong> 2 raíces reales distintas.<br><strong>x₁ = ${x1.toFixed(2)}</strong>, <strong>x₂ = ${x2.toFixed(2)}</strong>;
       } else if (disc === 0) {
         const x = -b / (2 * a);
-        resDiv.innerHTML = `<strong>Discriminante ($\Delta = 0$):</strong> Raíz doble.<br><strong>x₁ = x₂ = ${x.toFixed(2)}</strong>`;
+        resDiv.innerHTML = <strong>Discriminante ($\Delta = 0$):</strong> Raíz doble.<br><strong>x₁ = x₂ = ${x.toFixed(2)}</strong>;
       } else {
         const real = (-b / (2 * a)).toFixed(2);
         const imag = (Math.sqrt(-disc) / (2 * a)).toFixed(2);
-        resDiv.innerHTML = `<strong>Discriminante ($\Delta = ${disc}$):</strong> Raíses complejas conjugadas.<br><strong>x = ${real} ± ${imag}i</strong>`;
+        resDiv.innerHTML = <strong>Discriminante ($\Delta = ${disc}$):</strong> Raíses complejas conjugadas.<br><strong>x = ${real} ± ${imag}i</strong>;
       }
     }
 
@@ -690,7 +690,7 @@
       const det = (m11 * m22) - (m12 * m21);
       const resDiv = document.getElementById('detResult');
 
-      resDiv.innerHTML = `<strong>Procedimiento:</strong> (${m11} × ${m22}) - (${m12} × ${m21})<br><strong>|A| = ${det}</strong>`;
+      resDiv.innerHTML = <strong>Procedimiento:</strong> (${m11} × ${m22}) - (${m12} × ${m21})<br><strong>|A| = ${det}</strong>;
     }
 
     /* 5. FORMULARIO DE REGISTRO */
@@ -698,7 +698,7 @@
       e.preventDefault();
       const name = document.getElementById('name').value;
       const subject = document.getElementById('subjectSelect').value;
-      alert(`¡Gracias, ${name}! Tu solicitud para la clase de prueba en Academia Arana (${subject}) ha sido enviada con éxito.`);
+      alert(¡Gracias, ${name}! Tu solicitud para la clase de prueba en Academia Arana (${subject}) ha sido enviada con éxito.);
       document.getElementById('registrationForm').reset();
     }
   </script>
